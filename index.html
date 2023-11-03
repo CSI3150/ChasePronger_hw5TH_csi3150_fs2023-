@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famous Quotes</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+        }
+
+        #quoteButton {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            text-align: center;
+            font-size: 16px;
+            transition: all 0.3s;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transform: scale(1);
+            animation: float 3s infinite;
+        }
+
+        #quoteButton:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<button id="quoteButton">Click me to get a famous quote</button>
+
+<script>
+    const quotes = [
+        "Life is what happens when you’re busy making other plans. - John Lennon",
+        "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+        "The way to get started is to quit talking and begin doing. - Walt Disney",
+        "Life is really simple, but we insist on making it complicated. - Confucius",
+        "The purpose of our lives is to be happy. - Dalai Lama",
+        "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment. - Ralph Waldo Emerson",
+        "If you set your goals ridiculously high and it’s a failure, you will fail above everyone else’s success. - James Cameron",
+        "Success usually comes to those who are too busy to be looking for it. - Henry David Thoreau",
+        "The future depends on what you do today. - Mahatma Gandhi",
+        "The only way to do great work is to love what you do. - Steve Jobs"
+    ];
+
+    document.getElementById("quoteButton").addEventListener("click", function() {
+        let randomIndex = Math.floor(Math.random() * quotes.length);
+        alert(quotes[randomIndex]);
+    });
+</script>
+
+</body>
+</html>
